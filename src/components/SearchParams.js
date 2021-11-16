@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Pet from "../components/Pet"
+import useBreedList from '../components/useBreedList'
 
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 //const BREEDS = ["bird", "cat", "dog", "rabbit", "reptile"];
@@ -9,7 +10,7 @@ const [location, setLocation] = useState("");
 const [animal, setAnimal] = useState("");
 const [breed, setBreed] = useState("");
 const [pets, setPets] = useState([]);
-const breeds = [];
+const [breeds] = useBreedList(animal);
 
 
 useEffect(() => {
